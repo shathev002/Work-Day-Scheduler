@@ -1,7 +1,7 @@
 // Wrap all code that interacts with the DOM in a call to jQuery to ensure that
 // the code isn't run until the browser has finished rendering all the elements
 // in the html.
-$(function () {
+//$(function () {
   // TODO: Add a listener for click events on the save button. This code should
   // use the id in the containing time-block as a key to save the user input in
   // local storage. HINT: What does `this` reference in the click listener
@@ -20,33 +20,43 @@ $(function () {
   // attribute of each time-block be used to do this?
   //
   // TODO: Add code to display the current date in the header of the page.
-});
+//});
+
 
 var saveBtn = $('.saveBtn');
-
-var timeBlock = $(this).parent().attr('id'); //undefined
-var t = $(this).attr('id') //undefined
-console.log(timeBlock);
-
-console.log(t);
-
-console.log($('.description').value);
-//$('.description').value
-
 var currentDate = $('#currentDay');
 
 var currentDateFormat = dayjs().format('dddd, MMMM DD');
 
 currentDate.text(currentDateFormat);
 
+$(document).ready(function () {
 
-// save button
+ // save button  
 
-$('.saveBtn').on('click', function(event) { 
-  event.preventDefault();
+$('.saveBtn').on('click', function() { 
+  var timeBlock = $(this).parent().attr("id"); 
+   var textArea = $(this).siblings(".description").val();
+ 
+   localStorage.setItem(timeBlock, textArea);
+});
+
+//Getting text from localStorage
+
+function getText () {
+  var timeStorage = $(this).attr('id');
+  var textStorage = localStorage.getItem(timeStorage); 
+  $('.time-block').each(function() {
+$(this).children('.description').val(textStorage);
+
+});
 
 
-  /* click event */ });
+};
 
-//$('#top').children().eq(0).addClass('boxy');
+
+getText ();
+
+});
+
 
