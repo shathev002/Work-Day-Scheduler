@@ -21,3 +21,32 @@ $(function () {
   //
   // TODO: Add code to display the current date in the header of the page.
 });
+
+var saveBtn = $('.saveBtn');
+
+var timeBlock = $(this).parent().attr('id'); //undefined
+var t = $(this).attr('id') //undefined
+console.log(timeBlock);
+
+console.log(t);
+
+console.log($('.description').value);
+//$('.description').value
+
+var currentDate = $('#currentDay');
+
+var currentDateFormat = dayjs().format('dddd, MMMM DD');
+
+currentDate.text(currentDateFormat);
+
+
+// save button
+
+$('.saveBtn').on('click', function(event) { 
+  event.preventDefault();
+
+
+  /* click event */ });
+
+//$('#top').children().eq(0).addClass('boxy');
+
