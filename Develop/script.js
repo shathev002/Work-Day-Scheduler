@@ -58,12 +58,13 @@ $('#hour-17 .description').val(localStorage.getItem('hour-17'));
 // color coding time blocks
 
 var currentHr = dayjs().hour();
+var timeBlockHr = parseInt($(this).attr('id').split('')[1]); //error
 //var timeBlockHr = parseInt($(this).attr('id')); //undefined 
 //var timeBlockHr = $(this).attr('id'); //undefined 
 //console.log($(this).attr('id')); //undefined 
 
 console.log(currentHr);
-console.log(this.id);
+console.log(timeBlockHr);
 
 
 function colorCoding () {
