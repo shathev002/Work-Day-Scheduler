@@ -25,7 +25,6 @@
 
 var saveBtn = $('.saveBtn');
 var currentDate = $('#currentDay');
-
 var currentDateFormat = dayjs().format('dddd, MMMM DD');
 
 currentDate.text(currentDateFormat);
@@ -58,14 +57,14 @@ $('#hour-17 .description').val(localStorage.getItem('hour-17'));
 // color coding time blocks
 
 var currentHr = dayjs().hour();
-var timeBlockHr = parseInt($(this).attr('id').split('')[1]); //error
+//var timeBlockHr = parseInt($(this).attr('id').split('')[1]); //error
 //var timeBlockHr = parseInt($(this).attr('id')); //undefined 
 //var timeBlockHr = $(this).attr('id'); //undefined 
 //console.log($(this).attr('id')); //undefined 
 
-console.log(currentHr);
-console.log(timeBlockHr);
-
+//console.log(currentHr);
+//console.log(timeBlockHr);
+console.log($(this));
 
 function colorCoding () {
 
@@ -75,7 +74,20 @@ function colorCoding () {
     $(this).addClass('present');
     $(this).removeClass('past');
     $(this).removeClass('future');
-   }
+
+   } else if (timeBlockHr < currentHr) {
+    $(this).removeClass('present');
+    $(this).addClass('past');
+    $(this).removeClass('future');
+
+   } else { 
+    
+  $(this).removeClass('past');
+   $(this).addClass('future');
+   $(this).removeClass('present');
+   
+
+   };
 
 
   });
