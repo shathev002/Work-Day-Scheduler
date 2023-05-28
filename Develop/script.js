@@ -37,7 +37,7 @@ $(document).ready(function () {
 $('.saveBtn').on('click', function() { 
   var timeBlock = $(this).parent().attr("id"); 
    var textArea = $(this).siblings(".description").val();
- 
+   
    localStorage.setItem(timeBlock, textArea);
 });
 
@@ -52,19 +52,43 @@ $('#hour-14 .description').val(localStorage.getItem('hour-14'));
 $('#hour-15 .description').val(localStorage.getItem('hour-15'));
 $('#hour-16 .description').val(localStorage.getItem('hour-16'));
 $('#hour-17 .description').val(localStorage.getItem('hour-17'));
+
+
 });
+// color coding time blocks
 
-// function getText () {
-//   var timeStorage = $(this).attr('id');
-//   var textStorage = localStorage.getItem(timeStorage); 
-//   console.log(timeStorage, textStorage) //undefined
-//   $('.time-block').each(function() {
-// $(this).children('.description').val(textStorage);
+var currentHr = dayjs().hour();
+//var timeBlockHr = parseInt($(this).attr('id')); //undefined 
+//var timeBlockHr = $(this).attr('id'); //undefined 
+//console.log($(this).attr('id')); //undefined 
 
-// });
+console.log(currentHr);
+console.log(this.id);
 
-// getText ();
 
-//});
+function colorCoding () {
+
+
+  $('time-block').each(function() {
+   if (timeBlockHr === currentHr) {
+    $(this).addClass('present');
+    $(this).removeClass('past');
+    $(this).removeClass('future');
+   }
+
+
+  });
+  
+
+
+};
+
+colorCoding ();
+
+
+
+
+
+
 
 
