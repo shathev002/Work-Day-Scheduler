@@ -35,6 +35,8 @@ You can also refer to the screenshot below.
 
 https://www.w3schools.com/ was used for reference regarding javaScript and jQuery topics. 
 
+https://day.js.org/ was used to access Day.js library and instructions.
+
 ## License
 
 N/A
