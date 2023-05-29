@@ -25,7 +25,7 @@ You can refer to the javaScript and html files to access the updated code for th
 
 To view the actual webpage please refer to the following url link.
 
-https://shathev002.github.io/Password-Generator/
+https://shathev002.github.io/Work-Day-Scheduler/
 
 You can also refer to the screenshot below. 
 
